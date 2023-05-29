@@ -2,7 +2,7 @@
 ## How to build
 1- Run kafka using `docker-compose.yaml`
 ```shell
-docker compose up -docker
+docker compose up -d
 ```
 2- Create topic 
 ```shell
