@@ -42,6 +42,11 @@ public class App
         KafkaStreams streams = new KafkaStreams(builder.build(), config);
         streams.start();
 
+        // Print topology
+        System.out.println(streams.toString());
+
+        // Gracefully stop kafka streams
+        Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 
     }
 }
