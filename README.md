@@ -4,14 +4,22 @@
 ```shell
 docker compose up -d
 ```
-2- Create topic 
+
+2- Create topics 
 ```shell
 kafka-topics.sh --bootstrap-server localhost:9094 --topic word-count-input --create --partitions 2 --replication-factor 1
 kafka-topics.sh --bootstrap-server localhost:9094 --topic word-count-output --create --partitions 2 --replication-factor 1
 ```
+
 3- Run application
 ```shell
 mvn exec:java -Dexec.mainClass="org.example.App"
+```
+
+5- Produce messages from command line
+```shell
+kafka-console-producer.sh --broker-list localhost:9094 \
+                          --topic word-count-input
 ```
 
 4- Start consumer from command line
@@ -26,8 +34,3 @@ kafka-console-consumer.sh  --bootstrap-server localhost:9094 \
                            --property value.deserializer=org.apache.kafka.common.serialization.LongDeserializer
 ```
 
-5- Produce messages from command line
-```shell
-kafka-console-producer.sh --broker-list localhost:9094 \
-                          --topic word-count-input
-```
