@@ -13,7 +13,7 @@ kafka-topics.sh --bootstrap-server localhost:9094 --topic word-count-output --cr
 
 3- Run application
 ```shell
-mvn exec:java -Dexec.mainClass="org.example.App"
+mvn exec:java -Dexec.mainClass="org.example.WordsCountApp"
 ```
 
 5- Produce messages from command line

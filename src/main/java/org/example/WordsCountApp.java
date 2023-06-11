@@ -16,7 +16,7 @@ import java.util.Properties;
  * Hello kafka streams!
  *
  */
-public class App 
+public class WordsCountApp
 {
     public static void main( String[] args )
     {
